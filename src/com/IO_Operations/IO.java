@@ -39,6 +39,20 @@ public class IO {
 			}
 		}
 		System.out.println("-------------------");
-	}
 
+	
+	//UC3 : Using Various Other Methods
+	
+	if(f1.canRead())
+	{
+		System.out.println(f1.getName()+ " Is readable");
+	}
+	System.out.println(f1.getName() + " is " +f1.length()+ " bytes long.");
+	System.out.println(f1.getName() + " was modified "+f1.lastModified()+" milliseconds away.");
+	
+	//deleting directory
+	f1.delete();
+	System.out.println(f1.getName() + " is deleted.");
+
+}
 }
