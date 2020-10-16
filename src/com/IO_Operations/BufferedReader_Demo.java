@@ -1,27 +1,28 @@
 package com.IO_Operations;//
 
-import java.io.FileInputStream; ///
 import java.io.*;
 
-public class FileInputStream_Demo {
+public class BufferedReader_Demo {
 
 	public static void main(String[] args) {
 		int ch = 0;
-		FileInputStream fis = null;//
+		String str = null;
+		FileReader fr = null;
+		BufferedReader br = null;
 
 		try {
-			 fis = new FileInputStream("D:\\Capg_Personal\\IO Operations\\src\\com\\IO_Operations\\log1.txt");
-			while ((ch = fis.read()) != -1) {
-				System.out.print((char)ch);
+			fr = new FileReader("D:\\Capg_Personal\\IO Operations\\src\\com\\IO_Operations\\log1.txt");
+			br = new BufferedReader(fr);
+			while ((str = br.readLine()) != null) {
+				System.out.print(str);
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			try {
-				fis.close();
+				fr.close();
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
 
