@@ -1,32 +1,28 @@
 package com.IO_Operations;//
-
-import java.io.FileInputStream; ///
 import java.io.*;
-
-public class FileInputStream_Demo {
-
+public class FileWriter_Demo {
 	public static void main(String[] args) {
+		// TODO Auto-generated method stubS
 		int ch = 0;
-		FileInputStream fis = null;//
-
+		FileWriter fw = null;
+		//String str = "This is my Output Stream";
 		try {
-			 fis = new FileInputStream("D:\\Capg_Personal\\IO Operations\\src\\com\\IO_Operations\\log1.txt");
-			while ((ch = fis.read()) != -1) {
-				System.out.print((char)ch);
-			}
+			 fw = new FileWriter("D:\\Capg_Personal\\IO Operations\\src\\com\\IO_Operations\\log1.txt");
+			fw.write("Welcome To Character Stream");
+			fw.flush();
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			try {
-				fis.close();
+				fw.close();
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
 
 			}
-		}
-	}
 
+		}
+
+	}
 }
