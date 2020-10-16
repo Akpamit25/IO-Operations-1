@@ -21,7 +21,7 @@ public class FileOutputStream_Demo1 {
 			 {
 				 fos.write(ch);
 			 }
-			//byte barr[] = str.getBytes();
+//			byte barr[] = str.getBytes();
 			//fos.write(barr);
 			//fos.flush();
 		} catch (FileNotFoundException e) {
